@@ -7,4 +7,12 @@ cmake -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../te
 make -j4 all
 ctest -T test
 ctest -T coverage
+
+# Create code coverage report
+mkdir -p coverage
+cd coverage
+gcovr --root ../.. --html-details coverage.html --filter '../../source/' --filter '../../include/'
+open ./coverage.html
+cd ..
+
 cd ../build/Unix
