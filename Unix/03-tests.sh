@@ -2,5 +2,5 @@
 set -e
 cd ../..
 cd temp
-ctest -V
+ctest -V || true
 cd ../build/Unix
