@@ -11,7 +11,7 @@ ctest -T coverage || true
 # Create code coverage report
 mkdir -p coverage
 cd coverage
-gcovr --root ../.. --html-details coverage.html --filter '../../source/' --filter '../../include/'
+gcovr --root ../.. --html-details coverage.html --filter '../../include/' --filter '../../source/' --exclude-unreachable-branches --exclude-noncode-lines --exclude-throw-branches
 open ./coverage.html
 cd ..
 
